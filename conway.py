@@ -12,7 +12,7 @@ History : 11/08/2023 - v1.0 - Created project file
 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+from matplotlib.animation import FuncAnimation
 
 __author__ = "Steven Diep"
 __maintainer__ = "Steven Diep"
@@ -57,7 +57,7 @@ fig, ax = plt.subplots()
 img = ax.imshow(grid, interpolation='nearest', cmap='gray')
 
 # Create the animation object
-ani = animation.FuncAnimation(fig, update, fargs=(img, grid, width, height), frames=100, interval=50, blit=True)
+ani = FuncAnimation(fig, update, fargs=(img, grid, width, height), frames=100, interval=50, blit=True)
 
 # Show the animation
 plt.show()
